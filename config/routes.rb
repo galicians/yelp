@@ -15,10 +15,9 @@ Rails.application.routes.draw do
   #   resources :products
 
 
-resources :restaurants
+resources :restaurants 
 
 
-'index#index'
 
   # Example resource route with options:
   #   resources :products do

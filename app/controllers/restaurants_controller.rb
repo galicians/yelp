@@ -9,12 +9,15 @@ class RestaurantsController < ApplicationController
   	end
 
   	def create
-	    Restaurant.create(params[:restaurant].permit(:name))
+	    @restaurant = Restaurant.create(params[:restaurant].permit(:name))
 	    redirect_to '/restaurants'
   	end
 
+# This method gets called when you go to /restaurants/:restaurant_id, and uses
+# the ID passed in the URL to look up the correct record from the database.
+
   	def show
-  		@restaurants = Restaurant.all
+  		@restaurant =  Restaurant.find(params[:id])
   	end
 
 
